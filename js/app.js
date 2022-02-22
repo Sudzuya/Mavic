@@ -3959,7 +3959,7 @@
             });
         }
         if (document.querySelector(".fullpage")) {
-            const swiperFullpage = new core(".fullpage", {
+            var swiperFullpage = new core(".fullpage", {
                 modules: [ Navigation, Mousewheel, Scrollbar, freeMode ],
                 wrapperClass: "fullpage__wrapper",
                 slideClass: "full-screen",
@@ -3982,6 +3982,12 @@
                     disableOnInteraction: false
                 },
                 breakpoints: {
+                    320: {
+                        freeMode: {
+                            enabled: true
+                        }
+                    },
+                    768: {},
                     992: {
                         autoHeight: true
                     }
@@ -4039,6 +4045,7 @@
                     }
                 }
             }
+            setScrollType();
         }
     }
     window.addEventListener("load", (function(e) {
