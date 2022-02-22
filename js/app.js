@@ -3958,27 +3958,28 @@
                 on: {}
             });
         }
-        if (document.querySelector(".swiper-fullpage")) {
-            const swiperFullpage = new core(".swiper-fullpage", {
+        if (document.querySelector(".fullpage")) {
+            const swiperFullpage = new core(".fullpage", {
                 modules: [ Navigation, Mousewheel, Scrollbar, freeMode ],
+                wrapperClass: "fullpage__wrapper",
+                slideClass: "full-screen",
                 observer: true,
                 observeParents: true,
-                slidesPerView: 1,
+                slidesPerView: "auto",
                 spaceBetween: 0,
                 autoHeight: true,
+                setWrapperSize: true,
                 speed: 800,
                 direction: "vertical",
                 mousewheel: {
                     invert: false
                 },
+                simulateTouch: false,
+                preloadImages: false,
                 effect: "fade",
                 autoplay: {
                     delay: 3e3,
                     disableOnInteraction: false
-                },
-                scrollbar: {
-                    el: ".swiper-scrollbar",
-                    draggable: true
                 },
                 breakpoints: {
                     992: {
@@ -3996,8 +3997,9 @@
             });
             function menuScroll() {
                 let menuItem = document.querySelectorAll(".header__items a");
-                let logo = document.querySelector(".header__logo");
+                let logo = document.querySelectorAll(".header__logo");
                 let sectionSlide = document.querySelectorAll("section");
+                let arrowDown = document.querySelectorAll(".arrow-down__link");
                 sectionSlide.forEach((function(section, i) {
                     menuItem.forEach((function(link, idx) {
                         link.addEventListener("click", (function() {
@@ -4005,8 +4007,15 @@
                         }));
                     }));
                 }));
-                logo.addEventListener("click", (function() {
-                    swiperFullpage.slideTo(0, 800, true);
+                logo.forEach((function(log) {
+                    log.addEventListener("click", (function() {
+                        swiperFullpage.slideTo(0, 800, true);
+                    }));
+                }));
+                arrowDown.forEach((function(arrow) {
+                    arrow.addEventListener("click", (function() {
+                        swiperFullpage.slideNext(800);
+                    }));
                 }));
             }
             function setScrollType() {
@@ -4015,10 +4024,9 @@
                     wrapper.classList.remove("_free");
                     swiperFullpage.params.freeMode.enabled = false;
                 }
-                console.log(swiperFullpage);
                 for (let index = 0; index < swiperFullpage.slides.length; index++) {
                     const pageSlide = swiperFullpage.slides[index];
-                    const pageSlideContent = pageSlide.querySelector(".full-screen");
+                    const pageSlideContent = pageSlide.querySelector(".content");
                     if (pageSlideContent) {
                         const pageSlideContentHeight = pageSlideContent.offsetHeight;
                         console.log(window.innerHeight);
