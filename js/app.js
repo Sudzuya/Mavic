@@ -4045,6 +4045,7 @@
                         console.log(pageSlideContentHeight);
                         if (pageSlideContentHeight > window.innerHeight) {
                             wrapper.classList.add("_free");
+                            swiperFullpage.destroy();
                             swiperFullpage.params.freeMode.enabled = true;
                             swiperFullpage.params.freeMode.momentumBounce = false;
                             swiperFullpage.params.freeMode.minimumVelocity = .05;
