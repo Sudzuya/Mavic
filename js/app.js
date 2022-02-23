@@ -4045,7 +4045,7 @@
                             wrapper.classList.add("_free");
                             swiperFullpage.params.freeMode.enabled = true;
                             swiperFullpage.params.freeMode.momentumBounce = false;
-                            swiperFullpage.params.freeMode.minimumVelocity = 1;
+                            swiperFullpage.params.freeMode.minimumVelocity = .3;
                             console.log(swiperFullpage);
                             break;
                         }
