@@ -3967,6 +3967,8 @@
                 observeParents: true,
                 slidesPerView: "auto",
                 spaceBetween: 0,
+                onlyExternal: true,
+                touchReleaseOnEdges: true,
                 autoHeight: true,
                 setWrapperSize: true,
                 speed: 800,
@@ -4029,6 +4031,8 @@
                 if (wrapper.classList.contains("_free")) {
                     wrapper.classList.remove("_free");
                     swiperFullpage.params.freeMode.enabled = false;
+                    swiperFullpage.params.freeMode.momentumBounce = true;
+                    swiperFullpage.params.freeMode.minimumVelocity = .02;
                 }
                 for (let index = 0; index < swiperFullpage.slides.length; index++) {
                     const pageSlide = swiperFullpage.slides[index];
@@ -4040,6 +4044,9 @@
                         if (pageSlideContentHeight > window.innerHeight) {
                             wrapper.classList.add("_free");
                             swiperFullpage.params.freeMode.enabled = true;
+                            swiperFullpage.params.freeMode.momentumBounce = false;
+                            swiperFullpage.params.freeMode.minimumVelocity = 1;
+                            console.log(swiperFullpage);
                             break;
                         }
                     }
