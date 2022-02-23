@@ -4033,6 +4033,8 @@
                     swiperFullpage.params.freeMode.enabled = false;
                     swiperFullpage.params.freeMode.momentumBounce = true;
                     swiperFullpage.params.freeMode.minimumVelocity = .02;
+                    swiperFullpage.params.freeMode.momentumRatio = 1;
+                    swiperFullpage.params.freeMode.momentumVelocityRatio = 1;
                 }
                 for (let index = 0; index < swiperFullpage.slides.length; index++) {
                     const pageSlide = swiperFullpage.slides[index];
@@ -4045,7 +4047,9 @@
                             wrapper.classList.add("_free");
                             swiperFullpage.params.freeMode.enabled = true;
                             swiperFullpage.params.freeMode.momentumBounce = false;
-                            swiperFullpage.params.freeMode.minimumVelocity = .3;
+                            swiperFullpage.params.freeMode.minimumVelocity = .05;
+                            swiperFullpage.params.freeMode.momentumRatio = .8;
+                            swiperFullpage.params.freeMode.momentumVelocityRatio = .8;
                             console.log(swiperFullpage);
                             break;
                         }
