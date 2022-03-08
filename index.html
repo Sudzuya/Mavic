@@ -6,9 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220223013529">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220308211819">
 	<link rel="shortcut icon" href="favicon.ico">
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,regular,500,700&_v=20220223013529" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,regular,500,700&_v=20220308211819" rel="stylesheet" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -18,27 +18,27 @@
 		<header class="header">
 			<div class="header__custom-container">
 				<div class="header__body">
-					<a href="#" class="header__logo desktop-logo">
+					<a href="#" data-goto=".first-block" class="header__logo desktop-logo">
 						<img src="img/logo.svg" alt="">
 					</a>
-					<a href="#" class="header__logo mobile-logo">
+					<a href="#" data-goto=".first-block" class="header__logo mobile-logo">
 						<img src="img/logo-mobile.svg" alt="">
 					</a>
 					<ul data-da=".mobile-menu,992,1" class="header__list">
 						<li class="header__items">
-							<a href="#" class="header__link">О ДРОНЕ</a>
+							<a href="#" data-goto=".two-block" class="header__link">О ДРОНЕ</a>
 						</li>
 						<li class="header__items">
-							<a href="#" class="header__link">ПРЕИМУЩЕСТВА</a>
+							<a href="#" data-goto=".three-block" class="header__link">ПРЕИМУЩЕСТВА</a>
 						</li>
 						<li class="header__items">
-							<a href="#" class="header__link">ХАРАКТЕРИСТИКИ</a>
+							<a href="#" data-goto=".four-block" class="header__link">ХАРАКТЕРИСТИКИ</a>
 						</li>
 						<li class="header__items">
-							<a href="#" class="header__link">ВОПРОСЫ</a>
+							<a href="#" data-goto=".five-block" class="header__link">ВОПРОСЫ</a>
 						</li>
 						<li class="header__items">
-							<a href="#" class="header__link">КОНТАКТЫ</a>
+							<a href="#" data-goto=".last-block" class="header__link">КОНТАКТЫ</a>
 						</li>
 					</ul>
 					<div class="header__social">
@@ -340,7 +340,7 @@
 						</div>
 					</div>
 					<div class="five-block__arrow arrow-down">
-						<a class="arrow-down__link" href="#">
+						<a class="arrow-down__link" href="#" data-goto=".last-block">
 							<img class="arrow-down__img" src="img/arrdown.svg" alt="">
 						</a>
 					</div>
@@ -442,7 +442,7 @@
 	</div>
 </div>
  -->
-	<script src="js/app.min.js?_v=20220223013529"></script>
+	<script src="js/app.min.js?_v=20220308211819"></script>
 </body>
 
 </html>
